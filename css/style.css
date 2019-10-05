@@ -1,0 +1,391 @@
+/**
+TODO: Fix diplay issue of key dd and text input showing together
+ */
+
+body {
+    font-family: 'Share Tech Mono', monospace !important;
+}
+
+.fa {
+    margin-right: 4px;
+}
+
+.nav-encrypt-btn {
+    color: #fff !important;
+    background-color: #ff9a2b;
+}
+
+.content a {
+    color: #7a7a7a !important;
+}
+
+.content a:hover {
+    color: #fa8700 !important;
+}
+
+.footer {
+    background-color: whitesmoke;
+    padding: 39px 20px 15px !important;
+}
+
+.nali {
+    display: inline-block;
+    padding-top: 16px;
+}
+
+.nali:after {
+    display: block;
+    content: '';
+    border-bottom: 2px solid #fa8700;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: transform 250ms ease-in-out;
+    -moz-transition: transform 250ms ease-in-out;
+    -o-transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
+}
+
+.nali:hover:after {
+    transform: scaleX(1);
+}
+
+#cursor {
+    font-size: 22px;
+    font-weight: 800 !important;
+}
+
+.subimg {
+    height: 120px;
+    width: 300px;
+}
+
+.stop-scroll {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.hero.is-info.is-bold {
+    background-image: -webkit-linear-gradient(309deg,#1577c6 0,#3273dc 71%,#4366e5 100%);
+    background-image: linear-gradient(141deg,#000000 0,#3273dc 71%,#4366e5 100%)!important;
+}
+
+.is-loading {
+    /*opacity: 0;*/
+}
+
+.progress.is-small {
+    /*opacity: 0;*/
+    height: 3px !important;
+}
+
+.progress:not(:last-child) {
+    margin-bottom: 0 !important;
+}
+
+.top-b {
+    margin: 5px 0 !important;
+}
+
+.fa-arrows-v {
+    margin: 0 20px !important;
+    color: #c8c2c2;
+}
+
+.arrows {
+    margin-left: 8px;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes flash {
+    from, 50%, to {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+@keyframes flash {
+    from, 50%, to {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+.flash {
+    -webkit-animation-name: flash;
+    animation-name: flash;
+}
+
+.fa-warning {
+    visibility: hidden;
+    margin-top: 4px;
+}
+
+.s-warn {
+    margin-top: 8px;
+    color: #ff3860;
+
+}
+
+.help {
+    visibility: hidden;
+}
+
+span.v-help {
+    visibility: hidden;
+    font-size: 11px;
+    margin-top: 5px;
+    color: #ff3860;
+}
+
+span.v-text-2 {
+    visibility: hidden;
+}
+
+.nav-left {
+    margin-left: 8px;
+}
+
+.nav-right {
+    margin-right: 8px;
+
+}
+
+#encryptMessage:hover {
+    background-color: #009e87;
+    color: #fffdfe;
+    -webkit-transition: background-color .25s ease;
+    -moz-transition: background-color .25s ease;
+    -ms-transition: background-color .25s ease;
+    -o-transition: background-color .25s ease;
+    transition: background-color .25s ease;
+}
+
+#decryptMessage:hover {
+    background-color: #2159a0;
+    color: #fffdfe;
+    -webkit-transition: background-color .25s ease;
+    -moz-transition: background-color .25s ease;
+    -ms-transition: background-color .25s ease;
+    -o-transition: background-color .25s ease;
+    transition: background-color .25s ease;
+}
+
+#clearCancel {
+    margin-top: 3px;
+}
+
+.fa-arrows-h {
+    margin: 7px;
+}
+
+.progress::-webkit-progress-bar {
+    background-color: #db3127;
+}
+
+/*.progress {*/
+/*display: none;*/
+/*}*/
+
+#key-col {
+    display: none;
+}
+
+#vigenere-input {
+    display: none;
+}
+
+@media screen and (min-width: 1671px) {
+    .column.is-wide-half {
+        -webkit-box-flex: 0 !important;
+        -ms-flex: none !important;
+        flex: none !important;
+        width: 50% !important;
+    }
+
+    .column.is-offset-one-quarter-widescreen {
+        margin-left: 25% !important;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1670px) {
+    .column.is-offset-1-desktop {
+        margin-left: 8.33333% !important;
+    }
+
+    .column.is-10-desktop {
+        -webkit-box-flex: 0;
+        -ms-flex: none;
+        flex: none;
+        width: 83.33333% !important;
+    }
+}
+
+table tr:hover {
+    background-color: #f5ec9f !important;
+}
+
+/*table tr td:hover {*/
+/*background-color: #ffcf9a !important;*/
+/*}*/
+
+table tr td:first-child:hover {
+    background-color: rgba(0, 6, 255, 0.28);
+}
+
+table tr td:first-child {
+    background-color: rgba(0, 6, 255, 0.28);
+}
+
+.center-table th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.center-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+table {
+    overflow: hidden;
+}
+
+td, th {
+    padding: 2px;
+    position: relative;
+}
+
+
+table tr:first-child {
+    border-bottom: 2px solid #a4a4a4;
+    font-weight: 900 !important;
+}
+
+table tr td:nth-child(1) {
+    border-right: 2px solid #a4a4a4;
+    font-weight: 900 !important;
+    color: #000;
+}
+
+table tr td:hover {
+    background-color: #ff5436;
+    color: #ffffff;
+    font-weight: 900 !important;;
+}
+
+body:not(.nohover) tbody tr:hover {
+    background-color: #f5ec9f;
+    color: black !important;
+}
+
+td:hover::after,
+thead th:not(:empty):hover::after,
+td:focus::after,
+thead th:not(:empty):focus::after {
+    content: '';
+    height: 10000px;
+    left: 0;
+    position: absolute;
+    top: -5000px;
+    width: 100%;
+    z-index: -1;
+}
+
+td:hover::after,
+th:hover::after {
+    background-color: #f5ec9f;
+}
+
+td:first-child:hover::after {
+    background-color: rgba(0, 6, 255, 0.1);
+}
+
+table tbody tr:first-child {
+    background-color: rgba(0, 6, 255, 0.28);
+}
+
+table tbody tr:first-child:hover {
+    background-color: rgba(0, 6, 255, 0.4) !important;
+}
+
+/*table tbody tr:first-child td:hover {*/
+    /*background-color: rgba(0, 6, 255, 0.28) !important;*/
+/*}*/
+
+table tbody tr:first-child td:first-child {
+    background-color: whitesmoke !important;
+}
+table tbody tr:first-child td:first-child:hover {
+    background-color: whitesmoke !important;
+}
+
+table tbody tr:first-child td:hover {
+    background-color: transparent!important;
+    color: #000000 !important;
+}
+
+table tbody tr td:first-child {
+    color: #000000;
+}
+
+table tbody tr:first-child {
+    font-weight: 600 !important;
+}
+s
+.vertical-text {
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    white-space: nowrap;
+    display: block;
+}
+
+#container-vert {
+    padding: 142px 0 0 38px;
+} 
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+
+}
+
+
+.button:focus, .button.is-focused {
+    border-color: #2630d1;
+    box-shadow: 0 0 0.5em rgba(12, 18, 209, 0.25);
+    color: #363636;
+}
+
+
+/* TODO: Fix device size queries for key change display */

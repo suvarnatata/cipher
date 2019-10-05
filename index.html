@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ciphered Messages</title>
+    <link href="css/bulma.min.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+</head>
+<body>
+<nav class="nav has-shadow has-dropdown">
+    <div class="nav-left">
+        <a class="nav-item ciphered-name" href="#">
+            <span><i class="fa fa-key" aria-hidden="true"></i></span>
+            <span>Ciphered</span>
+        </a>
+    </div>
+
+    <span class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
+
+    <div id="nav-menu" class="nav-right nav-menu">
+        <a class="nav-item nali" id="about">
+            About
+        </a>
+        <span class="nav-item">
+        <a class="button nav-encrypt-btn" href="#">
+            <span>Encrypt Some Text</span>
+        </a>
+        </span>
+    </div>
+
+</nav>
+<section class="hero is-info is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                ÇÏphÈrèÐ
+            </h1>
+            <h2 class="subtitle" id="typed">
+                <span id="texttype"></span><span id='cursor'>|</span>
+            </h2>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <section class="section">
+        <div class="container">
+            <div class="heading">
+                <h1 class="title" id="title">Substitution Cipher</h1>
+                <p class="title is-5" id="description">
+                    A Substitution cipher is a method of encoding [substituting] every plaintext character into a
+                    ciphertext character
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="columns">
+    <div class="column is-8 is-offset-2">
+        <div class="notification is-danger has-text-centered animated" id="notify">
+            <button class="delete del-warn"></button>
+            Notice! Do not use this as a means for encrypting personal or important data.
+        </div>
+    </div>
+</div>
+<div class="modal" id="aboutModal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">About This Site</p>
+            <button class="delete mod-close"></button>
+        </header>
+        <section class="modal-card-body">
+            This site was built to learn, and share a few different methods of encoding plaintext
+            into unreadable ciphertext. Over the course of a thousands of years,
+            people have had a desire for privacy and or secrecy. This project was taken on to learn
+            simple encryption methods that have been used throughout history. While also allowing
+            for anyone to type in a message, and be able to share it with friends, or tweet it to the world.
+        </section>
+        <footer class="modal-card-foot">
+        </footer>
+    </div>
+</div>
+
+<!-- Begin Content -->
+
+<div class="columns" id="encrypt-sec">
+    <div class="column is-half-desktop is-half-tablet is-10-mobile is-offset-1-mobile is-offset-one-quarter">
+        <div class="columns">
+
+            <div class="column is-half">
+                <label class="label">Ciphers <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></label>
+                <p class="control">
+  <span class="select">
+
+
+    <select class="ciphselect" id="cipherSelect">
+        <option value="none" disabled selected>Select dropdown</option>
+        <option value="caesar">Caesar Cipher</option>
+        <option value="substitution">Substitution Cipher</option>
+        <option value="rot13">ROT13</option>
+        <option value="vigenere">Vigenère</option>
+    </select>
+  </span>
+                    <i class="fa fa-warning s-warn"></i>
+                    <span class="help h-select is-danger">You must select a cipher</span>
+
+                </p>
+            </div>
+            <div class="column is-half">
+                <div id="vigenere-input">
+                    <label class="label">Vigenère Key</label>
+                    <p class="control">
+                        <!-- TODO: Get input value for vigenere key -->
+                        <input class="input" id="vigenereKey" type="text" placeholder="Ex: &quot;Boom&quot;">
+                        <span class="v-help v-text" id="v-err-text">You must enter a key <i
+                                class="fa fa-warning v-warn"></i></span>
+                    </p>
+                </div>
+                <div id="key-col">
+                    <label class="label" id="subSelectLabel">Substitution Key</label>
+                    <p class="control">
+                    <span class="select" id="slct">
+                    <select class="subselect" id="subSelect">
+                    <option value="none" disabled selected>Choose subtitution</option>
+                    </select>
+                    </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <label class="label">Enter Message</label>
+        <p class="control">
+            <textarea class="textarea" id="enText" placeholder="Type your message here"></textarea>
+            <span class="help h-text is-danger">You must fill out a message <i class="fa fa-warning t-warn"></i></span>
+
+        </p>
+
+
+        <div class="columns">
+            <p class="control column is-half is-offset-3">
+                <button class="button is-primary" id="encryptMessage"><i class="fa fa-lock" aria-hidden="true"></i>
+                    Encrypt
+                </button>
+                <button class="button is-info is-info" id="decryptMessage"><i class="fa fa-unlock-alt"
+                                                                              aria-hidden="true"></i>
+                    Decrypt
+                </button>
+                <button class="button is-small" id="clearCancel">Cancel</button>
+            </p>
+        </div>
+
+        <progress class="progress is-small" id="progbar"></progress>
+        <p class="control">
+            <textarea class="textarea" id="msgdisplay" placeholder="Cipher will display here..."></textarea>
+        </p>
+    </div>
+</div>
+
+<section class="section" id="sub-section">
+    <!--container-->
+    <div class="columns">
+        <div class="column is-12-mobile is-10-desktop is-offset-1-desktop is-half-widescreen is-offset-one-quarter-widescreen">
+            <article class="message top-b">
+                <div class="message-header mds" id="plain-key-title">
+                    Substitution Key:
+                </div>
+                <div class="message-body">
+                    <h2 class="title is-3 abc-plaintext"></h2>
+                </div>
+            </article>
+            <div class="arrows">
+                <i class="fa fa-arrows-v fa-2x" aria-hidden="true"></i><i class="fa fa-arrows-v fa-2x"
+                                                                          aria-hidden="true"></i><i
+                    class="fa fa-arrows-v fa-2x" aria-hidden="true"></i><i class="fa fa-arrows-v fa-2x"
+                                                                           aria-hidden="true"></i><i
+                    class="fa fa-arrows-v fa-2x" aria-hidden="true"></i><i class="fa fa-arrows-v fa-2x"
+                                                                           aria-hidden="true"></i><i
+                    class="fa fa-arrows-v fa-2x" aria-hidden="true"></i><i class="fa fa-arrows-v fa-2x"
+                                                                           aria-hidden="true"></i><i
+                    class="fa fa-arrows-v fa-2x" aria-hidden="true"></i><i class="fa fa-arrows-v fa-2x"
+                                                                           aria-hidden="true"></i><i
+                    class="fa fa-arrows-v fa-2x" aria-hidden="true"></i><i class="fa fa-arrows-v fa-2x"
+                                                                           aria-hidden="true"></i><i
+                    class="fa fa-arrows-v fa-2x" aria-hidden="true"></i><i class="fa fa-arrows-v fa-2x"
+                                                                           aria-hidden="true"></i><i
+                    class="fa fa-arrows-v fa-2x" aria-hidden="true"></i>
+            </div>
+            <article class="message is-info top-b">
+                <div class="message-body">
+                    <h2 class="title is-3 abc-cipher"></h2>
+                </div>
+                <div class="message-header" id="cipher-key-title">
+                    Ciphertext:
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="vig-section">
+    <!-- TODO fix border bug on resize from key above table -->
+
+    <div class="columns">
+        <div class="column is-1-desktop" id="container-vert"><p class="no-select vertical-text title is-1">Your Text
+            Characters</p></div>
+        <div class="column is-10-desktop is-8-widescreen">
+            <p class="has-text-centered title is-1 no-select">Vigenère Cipher Key</p>
+            <div id="tableresult"></div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Ciphered</strong> by <a href="http://ianarsenault.me/">Ian Arsenault</a>. Find the source code
+                at <a href="https://github.com/GorgonsMaze/ciphered">Github</a>
+            </p>
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
